@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+				"${workspaceRoot}",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\tools\\\\**",
+				"C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\**",
+				"C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\tools\\\\**",
+				"C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\cores\\\\arduino",
+
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\EEPROM\\\\src",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\HID\\\\src",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\SoftwareSerial\\\\src",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\SPI\\\\src",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\Wire\\\\src",
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\libraries\\\\SPI\\\\src"
+            ],
+            "forcedInclude": [
+                "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\arduino\\\\avr\\\\cores\\\\arduino\\\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\tools\\\\avr\\\\bin\\\\avr-gcc.exe",
+            "cStandard": "c11",
+			"cppStandard": "c++17",
+					
+			"browse": {
+				"limitSymbolsToIncludedHeaders": false,
+				"path": [
+				  "C:\\\\Users\\\\Rhenan\\\\Desktop\\\\arduino-1.8.8\\\\hardware\\\\tools\\\\avr\\\\avr\\\\include",
+				  "${workspaceRoot}"
+				]
+			 },
+
+			 "defines": [
+                "USBCON"
+            ]
+        }
+    ],
+    "version": 4
+}

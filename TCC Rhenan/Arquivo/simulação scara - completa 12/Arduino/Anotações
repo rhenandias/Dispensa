@@ -1,0 +1,23 @@
+
+Subgrupo Function - Passa ao Vrep
+
+	- Reset Graph
+	- Plot Start
+	- Plot End
+ 
+ Subgrupo Movement - Executa Movimento
+
+	- Movimentação X e Y	
+
+
+Códigos:
+
+1 - Codigo ao Vrep
+	1 - Plot Start
+	2 - Plot End
+	3 - Suction On
+	4 - Suction Off
+	
+2 - Movimento Normal
+3 - End Simulation
+4 - Debug

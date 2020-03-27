@@ -1,0 +1,96 @@
+	
+	#Escreve um valor de �ngulo (graus) em uma junta de Revolu��o
+	def write_angle(self, handler, ang, cur_decimal_place = None):
+		#Juntas de Revolu��o
+		#Escreve um valor de �ngulo (em graus)
+
+		#Verifica precis�o decimal desejada
+		if cur_decimal_place == None:
+			#Precis�o decimal n�o especificada
+			#Assumir precis�o decimal padr�o
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adapta��o do valor de �ngulo a ser escrito
+		tgt_angle = math.radians(round(ang, cur_decimal_place))
+
+		#Realiza escrita do valor de �ngulo desejado
+		vrep.simxSetJointPosition(self.clientID, handler, tgt_angle, vrep.simx_opmode_oneshot)  
+
+	#Escreve um valor de posi��o (metros) em uma junta Prism�tica
+	def write_position(self, handler, m, cur_decimal_place = None):
+		#Juntas Prism�ticas
+		#Escreve um valor de posi��o (em metros)
+
+		#Verifica precis�o decimal desejada
+		if cur_decimal_place == None:
+			#Precis�o decimal n�o especificada
+			#Assumir precis�o decimal padr�o
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adapta��o do valor de �ngulo a ser escrito
+		tgt_pos = round(m, cur_decimal_place)
+
+		#Realiza escrita do valor de posi��o desejado
+		vrep.simxSetJointPosition(self.clientID, handler, tgt_pos, vrep.simx_opmode_oneshot)  
+
+	#Escreve um valor de velocidade (graus/s) em um motor (junta de Revolu��o)
+	def write_motor(self, handler, vel, cur_decimal_place = None):
+		#Juntas de Revolu��o
+		#Escreve um valor de velocidade em motores (graus/s)
+
+		#Verifica precis�o decimal desejada
+		if cur_decimal_place == None:
+			#Precis�o decimal n�o especificada
+			#Assumir precis�o decimal padr�o
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adapta��o do valor de �ngulo a ser escrito
+		tgt_velocity = math.radians(round(vel, cur_decimal_place))
+
+		#Realiza escrita do valor de velocidade desejado
+		vrep.simxSetJointTargetVelocity(self.clientID, handler, tgt_velocity, vrep.simx_opmode_oneshot)
+
+	#Executa leitura do ângulo (graus) de uma junta de Revolução
+	def read_angle(self, handler, cur_decimal_place = None):
+		#Juntas de Revolução
+		#Leitura de posição de uma junta (graus)
+		return_code, angle = vrep.simxGetJointPosition(self.clientID, handler, vrep.simx_opmode_oneshot_wait)
+
+		#Verifica precisão decimal desejada
+		if cur_decimal_place == None:
+			#Precisão decimal não especificada
+			#Assumir precisão decimal padrão
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adaptação decimal e retorna valor de leitura
+		return round(math.degrees(angle), cur_decimal_place)
+
+	#Executa leitura da posição (metros) de uma junta Prismática
+	def read_position(self, handler, cur_decimal_place = None):
+		#Juntas Prismáticas
+		#Leitura de posição de uma junta (m)
+		return_code, position = vrep.simxGetJointPosition(self.clientID, handler, vrep.simx_opmode_oneshot_wait)
+
+		#Verifica precisão decimal desejada
+		if cur_decimal_place == None:
+			#Precisão decimal não especificada
+			#Assumir precisão decimal padrão
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adaptação decimal e retorna valor de leitura
+		return round(position, cur_decimal_place)
+
+	#Executa leitura da velocidade (graus/s) de um motor (junta de Revolução)
+	def read_motor(self, handler, cur_decimal_place = None):
+		#Juntas de Revolução
+		#Leitura de velocidade de um motor (graus/s)
+		return_code, velocity = vrep.simxGetObjectFloatParameter (self.clientID, handler, vrep.sim_jointfloatparam_velocity, vrep.simx_opmode_oneshot_wait)
+
+		#Verifica precisão decimal desejada
+		if cur_decimal_place == None:
+			#Precisão decimal não especificada
+			#Assumir precisão decimal padrão
+			cur_decimal_place = self.decimal_place
+
+		#Realiza adaptação decimal e retorna valor de leitura
+		return round(math.degrees(velocity), cur_decimal_place)

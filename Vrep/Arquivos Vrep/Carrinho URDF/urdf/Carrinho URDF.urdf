@@ -1,0 +1,467 @@
+<robot
+  name="Carrinho URDF">
+  <link
+    name="Carrinho">
+    <inertial>
+      <origin
+        xyz="0.00199666199987792 -0.0189400807611972 -0.0136881532668823"
+        rpy="0 0 0" />
+      <mass
+        value="0.082768423902304" />
+      <inertia
+        ixx="0.000201613844720641"
+        ixy="2.66609005386214E-08"
+        ixz="3.70440577606517E-07"
+        iyy="0.000240846517634568"
+        iyz="-6.05506685626216E-06"
+        izz="9.16930272171248E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Carrinho.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Carrinho.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Suporte_Esfera">
+    <inertial>
+      <origin
+        xyz="-1.74261561344119E-10 3.40530969989428E-05 0.00148657220862539"
+        rpy="0 0 0" />
+      <mass
+        value="0.00237414440210429" />
+      <inertia
+        ixx="4.87449544241318E-08"
+        ixy="7.95368212523813E-15"
+        ixz="2.08753910021196E-15"
+        iyy="2.65313839101856E-07"
+        iyz="3.24384163348973E-10"
+        izz="2.97043383546495E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Suporte_Esfera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Suporte_Esfera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Suporte_Esfera"
+    type="fixed">
+    <origin
+      xyz="0.00193006122237212 0.00399999999997863 0.0602622704161046"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="Carrinho" />
+    <child
+      link="Suporte_Esfera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Esfera">
+    <inertial>
+      <origin
+        xyz="-5.82702822648933E-05 -2.4175771078036E-06 -0.00584954283957461"
+        rpy="0 0 0" />
+      <mass
+        value="0.00045167495160957" />
+      <inertia
+        ixx="4.09374806834351E-09"
+        ixy="9.63756597512817E-30"
+        ixz="-7.86966983612496E-14"
+        iyy="4.09344819598164E-09"
+        iyz="8.24300091953962E-42"
+        izz="4.09344819598164E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Esfera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Esfera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Esfera"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Suporte_Esfera" />
+    <child
+      link="Esfera" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Motor_D">
+    <inertial>
+      <origin
+        xyz="0.0238231938332452 -0.014248229179572 -0.0226342761780915"
+        rpy="0 0 0" />
+      <mass
+        value="0.0232395660314829" />
+      <inertia
+        ixx="7.88517781065102E-06"
+        ixy="-1.50721312408531E-11"
+        ixz="-5.63972204102169E-09"
+        iyy="7.69643214597542E-06"
+        iyz="8.82214845720843E-10"
+        izz="1.5253573475261E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Motor_D.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Motor_D.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_D"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Carrinho" />
+    <child
+      link="Motor_D" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Roda_D">
+    <inertial>
+      <origin
+        xyz="2.13200332388475E-10 -0.0180789354797895 -5.56268250039016E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0192262452096981" />
+      <inertia
+        ixx="5.3538644746941E-06"
+        ixy="1.85716539437448E-14"
+        ixz="-9.4733702267839E-14"
+        iyy="8.13780883173974E-06"
+        iyz="-1.19742575833095E-13"
+        izz="5.35401412475363E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Roda_D.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.933333333333333 0.133333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Roda_D.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Roda_D"
+    type="revolute">
+    <origin
+      xyz="0.0350300612223726 -0.0141843621168738 -0.0397377295838951"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="Motor_D" />
+    <child
+      link="Roda_D" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="Pneu_D">
+    <inertial>
+      <origin
+        xyz="1.00676758596485E-12 -0.0100000000000003 0.0169999623664972"
+        rpy="0 0 0" />
+      <mass
+        value="0.0290901066464294" />
+      <inertia
+        ixx="1.39853690384949E-05"
+        ixy="-4.04662956150723E-11"
+        ixz="-3.3017913101882E-20"
+        iyy="1.39897083178151E-05"
+        iyz="4.97345879631873E-20"
+        izz="2.50811515180265E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Pneu_D.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Pneu_D.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pneu_D"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="Roda_D" />
+    <child
+      link="Pneu_D" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Motor_E">
+    <inertial>
+      <origin
+        xyz="-0.0199630713885005 -0.0142517708204707 -0.0226342761780919"
+        rpy="0 0 0" />
+      <mass
+        value="0.0232395660314828" />
+      <inertia
+        ixx="7.88517781065102E-06"
+        ixy="-1.50721312408669E-11"
+        ixz="5.63972204102054E-09"
+        iyy="7.69643214597542E-06"
+        iyz="-8.82214845721639E-10"
+        izz="1.5253573475261E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Motor_E.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Motor_E.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_E"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Carrinho" />
+    <child
+      link="Motor_E" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Roda_E">
+    <inertial>
+      <origin
+        xyz="2.13200332388475E-10 -0.0180789354797895 -5.56268249865544E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0192262452096981" />
+      <inertia
+        ixx="5.3538644746941E-06"
+        ixy="1.85716557030657E-14"
+        ixz="-9.47337026621762E-14"
+        iyy="8.13780883173973E-06"
+        iyz="-1.19742576037902E-13"
+        izz="5.35401412475363E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Roda_E.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.933333333333333 0.133333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Roda_E.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Roda_E"
+    type="revolute">
+    <origin
+      xyz="-0.0311699387776279 -0.0143156378831686 -0.0397377295838953"
+      rpy="0 1.52438302633885 -1.5707963267949" />
+    <parent
+      link="Motor_E" />
+    <child
+      link="Roda_E" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="Pneu_E">
+    <inertial>
+      <origin
+        xyz="1.0067641165179E-12 3.19189119579733E-16 -0.0125012163640283"
+        rpy="0 0 0" />
+      <mass
+        value="0.0290901066464294" />
+      <inertia
+        ixx="1.39853690384949E-05"
+        ixy="4.04662956205065E-11"
+        ixz="3.46304386181604E-20"
+        iyy="1.39897083178151E-05"
+        iyz="5.52146560348243E-20"
+        izz="2.50811515180265E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Pneu_E.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Carrinho URDF/meshes/Pneu_E.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pneu_E"
+    type="fixed">
+    <origin
+      xyz="0 -0.00449874600246884 0"
+      rpy="-1.5707963267949 -1.52438302633885 0" />
+    <parent
+      link="Roda_E" />
+    <child
+      link="Pneu_E" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

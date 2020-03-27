@@ -1,0 +1,22 @@
+#Print Workspace
+
+pontos_x = []
+pontos_y = []
+
+l1 = 0.467
+l2 = 0.4005
+
+t1_min = -20
+t1_max = 200
+
+t2_min = -120
+t2_max = 120
+
+for i in range(t1_min, t1_max+1):
+    for j in range(t2_min, t2_max+1):
+        direct = direct_transform(i, j, l1, l2)
+        pontos_x.append(direct[2][0])
+        pontos_y.append(direct[2][1])
+        
+plt.plot(pontos_x, pontos_y, marker='.', linestyle=None)
+plt.show()

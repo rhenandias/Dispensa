@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+				"${workspaceRoot}",
+                "C:\\\\Program Files\\\\arduino-1.8.9\\\\tools\\\\**",
+				"C:\\\\Program Files\\\\arduino-1.8.9\\\\hardware\\\\arduino\\\\avr\\\\**",
+				"C:\\\\Program Files\\\\arduino-1.8.9\\\\hardware\\\\tools\\\\**",
+                "C:\\\\Program Files\\\\arduino-1.8.9\\\\hardware\\\\arduino\\\\avr\\\\cores\\\\arduino"
+            ],
+            "forcedInclude": [
+                "C:\\\\Program Files\\\\arduino-1.8.9\\\\hardware\\\\arduino\\\\avr\\\\cores\\\\arduino\\\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "cStandard": "c11",
+			"cppStandard": "c++17",
+					
+			"browse": {
+				"limitSymbolsToIncludedHeaders": false,
+				"path": [
+					"C:\\\\Program Files\\\\arduino-1.8.9\\\\hardware\\\\tools\\\\avr\\\\avr\\\\include",
+				  "${workspaceRoot}"
+				]
+			 },
+
+			 "defines": [
+                "USBCON"
+            ]
+        }
+    ],
+    "version": 4
+}
