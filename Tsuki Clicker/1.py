@@ -7,4 +7,4 @@ while True:
 	os.popen("adb shell input touchscreen tap 150 150")
 	clicks = clicks + 1
 	print("Clicando ... " + str(clicks))
-	time.sleep(1)
+	time.sleep(0.2)
